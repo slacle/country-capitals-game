@@ -18,19 +18,21 @@ class App extends Component {
   }
 
   selectRandom = () => {
-    let randomFive = [];
+    let capitalsClone = [...capitals];
+    let randomFiveCapitals = [];
 
     for (let i = 0; i < 5; i++) {
-      let selectedCapital = capitals.splice(
-        Math.floor(Math.random() * capitals.length),
+      let selectedCapital = capitalsClone.splice(
+        Math.floor(Math.random() * capitalsClone.length),
         1
       );
-      randomFive.push(selectedCapital[0]);
+      randomFiveCapitals.push(selectedCapital[0]);
     }
 
-    let selectedCountry = randomFive[Math.floor(Math.random() * 5)].name;
+    let selectedCountry =
+      randomFiveCapitals[Math.floor(Math.random() * 5)].name;
 
-    this.setState({ country: selectedCountry, fiveCities: randomFive });
+    this.setState({ country: selectedCountry, fiveCities: randomFiveCapitals });
   };
 
   check = country => {
