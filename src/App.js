@@ -65,14 +65,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>
-          <span>Right: {this.state.scoreRight}</span>
-          <br />
-          <span>Wrong: {this.state.scoreWrong}</span>
+        <div className="rightOrWrong">
+          <div>
+            Right: <span className="rightScore">{this.state.scoreRight}</span>
+          </div>
+          <div>
+            Wrong: <span className="wrongScore">{this.state.scoreWrong}</span>
+          </div>
         </div>
-        <p>
-          What's the capital of <strong>{this.state.country}</strong>?
-        </p>
+        <div className="question">
+          <div>What's the capital of:</div>
+          <div className="capital">{this.state.country}</div>
+        </div>
         {this.state.fiveCities.map((country, i) => (
           <button
             key={i}
@@ -85,7 +89,6 @@ class App extends Component {
             {country.capital}
           </button>
         ))}
-        <hr />
         <button className={"nextBtn"} onClick={this.next}>
           Next
         </button>
