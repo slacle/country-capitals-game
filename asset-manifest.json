@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/country-capitals-game/static/css/main.5214db9a.chunk.css",
+    "main.js": "/country-capitals-game/static/js/main.490d5940.chunk.js",
+    "main.js.map": "/country-capitals-game/static/js/main.490d5940.chunk.js.map",
+    "runtime-main.js": "/country-capitals-game/static/js/runtime-main.7e5fa099.js",
+    "runtime-main.js.map": "/country-capitals-game/static/js/runtime-main.7e5fa099.js.map",
+    "static/js/2.0fc3f19d.chunk.js": "/country-capitals-game/static/js/2.0fc3f19d.chunk.js",
+    "static/js/2.0fc3f19d.chunk.js.map": "/country-capitals-game/static/js/2.0fc3f19d.chunk.js.map",
+    "index.html": "/country-capitals-game/index.html",
+    "precache-manifest.02669c9f115196b3828dc21988686451.js": "/country-capitals-game/precache-manifest.02669c9f115196b3828dc21988686451.js",
+    "service-worker.js": "/country-capitals-game/service-worker.js",
+    "static/css/main.5214db9a.chunk.css.map": "/country-capitals-game/static/css/main.5214db9a.chunk.css.map"
+  }
+}
