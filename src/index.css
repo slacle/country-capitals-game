@@ -2,4 +2,41 @@ button {
   display: block;
   cursor: pointer;
   margin-bottom: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  color: black;
+  background: #ccc;
+}
+
+button:hover {
+  background: #bbb;
+}
+
+:disabled,
+:disabled:hover {
+  background: #eee;
+  cursor: default;
+}
+
+.right,
+.right:hover {
+  background: #8cf18c;
+}
+
+.wrong,
+.wrong:hover {
+  background: #f38585;
+}
+
+.nextBtn {
+  background: #c1f3ff;
+}
+
+.nextBtn:hover {
+  background: #a4e3f3;
+}
+
+::-moz-focus-inner {
+  border: none;
 }

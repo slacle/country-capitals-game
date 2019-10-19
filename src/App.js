@@ -8,8 +8,11 @@ class App extends Component {
     this.state = {
       country: "",
       fiveCities: [],
-      showMsg: false,
-      rightOrWrong: ""
+      rightOrWrong: "",
+      scoreRight: 0,
+      scoreWrong: 0,
+      disabled: false,
+      chosenBtn: null
     };
   }
 
@@ -35,16 +38,26 @@ class App extends Component {
     this.setState({ country: selectedCountry, fiveCities: randomFiveCapitals });
   };
 
-  check = country => {
-    this.setState({
-      showMsg: true,
-      rightOrWrong: country.name === this.state.country ? "right" : "wrong"
-    });
+  check = (country, i) => {
+    country.name === this.state.country
+      ? this.setState({
+          rightOrWrong: "right",
+          scoreRight: this.state.scoreRight + 1,
+          disabled: true,
+          chosenBtn: i
+        })
+      : this.setState({
+          rightOrWrong: "wrong",
+          scoreWrong: this.state.scoreWrong + 1,
+          disabled: true,
+          chosenBtn: i
+        });
   };
 
   next = () => {
     this.setState({
-      showMsg: false
+      disabled: false,
+      rightOrWrong: ""
     });
     this.selectRandom();
   };
@@ -52,17 +65,30 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div>
+          <span>Right: {this.state.scoreRight}</span>
+          <br />
+          <span>Wrong: {this.state.scoreWrong}</span>
+        </div>
         <p>
           What's the capital of <strong>{this.state.country}</strong>?
         </p>
         {this.state.fiveCities.map((country, i) => (
-          <button key={i} onClick={() => this.check(country)}>
+          <button
+            key={i}
+            onClick={() => this.check(country, i)}
+            disabled={this.state.disabled}
+            className={
+              this.state.chosenBtn === i ? this.state.rightOrWrong : null
+            }
+          >
             {country.capital}
           </button>
         ))}
-        {this.state.showMsg && <p>You are {this.state.rightOrWrong}!</p>}
         <hr />
-        <button onClick={this.next}>Next</button>
+        <button className={"nextBtn"} onClick={this.next}>
+          Next
+        </button>
       </div>
     );
   }
